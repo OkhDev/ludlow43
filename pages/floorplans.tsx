@@ -8,7 +8,10 @@ export default function FloorPlans() {
 		<>
 			<Head>
 				<title>Floor Plans</title>
-				<meta name='description' content='' />
+				<meta
+					name='description'
+					content='Ludlow 43 different floorplans that are available for lease ranging from a studio apartment with a full bathroom to a 4 bedroom and 2 bathroom with a living room apartment.'
+				/>
 			</Head>
 
 			<div className='mt-24 flex flex-col justify-center w-full m-auto max-w-7xl px-6 md:px-12 pt-8 md:pt-16'>

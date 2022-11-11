@@ -6,12 +6,10 @@ import {
 	IoIosArrowDropleftCircle,
 	IoIosArrowDroprightCircle,
 } from "react-icons/io"
-import { CgLoadbar } from "react-icons/cg"
 import { motion } from "framer-motion"
 
 export const Carousel = () => {
 	const images = [1, 2, 3, 4]
-	// const [scrollSnaps, setScrollSnaps] = useState([])
 
 	const [emblaRef, emblaApi] = useEmblaCarousel(
 		{ loop: true, skipSnaps: false, dragFree: false },
@@ -29,10 +27,6 @@ export const Carousel = () => {
 	const scrollNext = useCallback(() => {
 		if (emblaApi) emblaApi.scrollNext()
 	}, [emblaApi])
-	// const scrollTo = useCallback(
-	// 	(index) => embla && embla.scrollTo(index),
-	// 	[embla]
-	// )
 
 	return (
 		<div className='relative overflow-hidden' ref={emblaRef}>
@@ -40,15 +34,15 @@ export const Carousel = () => {
 				{images.map((num, i) => (
 					<div
 						key={i}
-						className='relative unset-img full-bleed flex-grow-0 flex-shrink-0 basis-full'
+						className='relative unset-img full-bleed flex-grow-0 flex-shrink-0 basis-full w-full h-full'
 					>
 						<Image
-							src={`/images/slider/slider${num}.jpeg`}
+							src={`/images/slider/slider${num}.webp`}
 							alt={`image ${num}`}
 							fill
 							className='custom-img'
 							sizes='100vw'
-							priority={i === 0 ? true : false}
+							priority={i === 0}
 						/>
 					</div>
 				))}
@@ -58,7 +52,7 @@ export const Carousel = () => {
 				className='absolute w-16 h-full top-0 left-0 text-white cursor-pointer'
 				onClick={scrollPrev}
 			>
-				<span className='flex h-full justify-center items-center m-auto'>
+				<span className='z-20 flex h-full justify-center items-center m-auto'>
 					<IoIosArrowDropleftCircle size={40} />
 				</span>
 			</motion.div>
@@ -67,13 +61,10 @@ export const Carousel = () => {
 				className='absolute w-16 h-full top-0 right-0 text-white cursor-pointer'
 				onClick={scrollNext}
 			>
-				<span className='flex h-full justify-center items-center m-auto'>
+				<span className='z-20 flex h-full justify-center items-center m-auto'>
 					<IoIosArrowDroprightCircle size={40} />
 				</span>
 			</motion.div>
-			<div className='absolute bottom-0 text-white'>
-				<CgLoadbar size={18} />
-			</div>
 		</div>
 	)
 }

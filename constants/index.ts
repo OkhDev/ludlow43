@@ -6,36 +6,25 @@ import {
 	FaFax,
 	FaPhoneAlt,
 } from "react-icons/fa"
-import { TbMovie, TbStar } from "react-icons/tb"
-import {
-	MdMuseum,
-	MdPark,
-	MdRestaurant,
-	MdEmail,
-	MdOutlineEmail,
-} from "react-icons/md"
-import { RiPencilRuler2Line, RiBuilding2Line } from "react-icons/ri"
+import { TbMovie } from "react-icons/tb"
+import { MdMuseum, MdPark, MdRestaurant } from "react-icons/md"
 
 export const navLinks = [
 	{
 		name: "Amenities",
 		href: "/amenities",
-		Icon: TbStar,
 	},
 	{
 		name: "Floor Plans",
 		href: "/floorplans",
-		Icon: RiPencilRuler2Line,
 	},
 	{
 		name: "Neighborhood",
 		href: "/neighborhood",
-		Icon: RiBuilding2Line,
 	},
 	{
 		name: "Contact",
 		href: "/contact",
-		Icon: MdOutlineEmail,
 	},
 ]
 
@@ -43,7 +32,7 @@ export const amenitiesFeatures = [
 	{
 		title: "Building Features",
 		list: [
-			"24-hour fitness center",
+			"24 hour fitness center",
 			"Rooftop lounger with amazing city skyline views",
 			"Coworking space with kitchenette",
 			"Free high speed WiFi",
@@ -171,9 +160,5 @@ export const contact = [
 	{
 		desc: "1(888)-823-5250 ",
 		Icon: FaFax,
-	},
-	{
-		desc: "support@ludlow43.com",
-		Icon: MdEmail,
 	},
 ]

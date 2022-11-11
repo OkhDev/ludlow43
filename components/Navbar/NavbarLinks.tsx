@@ -1,6 +1,9 @@
-import { navLinks } from "../../constants/index"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { useState } from "react"
+import { CgMenuRightAlt } from "react-icons/cg"
+import { navLinks } from "../../constants/index"
 
 const HoverOverLinks = {
 	rest: {
@@ -21,10 +24,49 @@ const HoverOverLinks = {
 	},
 }
 
+const MobileMenu = {
+	rest: {
+		y: -480,
+		z: -10,
+		transition: {
+			duration: 0.2,
+			type: "tween",
+			ease: "easeIn",
+		},
+	},
+	click: {
+		y: 0,
+		z: -10,
+		transition: {
+			duration: 0.2,
+			type: "tween",
+			ease: "easeIn",
+		},
+	},
+}
+
 const NavbarLinks = () => {
+	const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false)
+	const router = useRouter()
+
+	const logoClick = () => {
+		setIsMobileMenu(false)
+		router.push("/")
+	}
+
+	const menuClick = () => {
+		setIsMobileMenu(!isMobileMenu)
+	}
+
 	return (
 		<>
-			<ul className='hidden lg:flex gap-8'>
+			<h1
+				className='text-5xl font-logo text-white cursor-pointer'
+				onClick={logoClick}
+			>
+				ludlow 43
+			</h1>
+			<ul className='z-10 hidden lg:flex gap-8 items-center'>
 				{navLinks.map((links, index) => {
 					const { href, name } = links
 					return (
@@ -47,19 +89,34 @@ const NavbarLinks = () => {
 					)
 				})}
 			</ul>
+			<span
+				className='text-white p-6 pr-0 lg:hidden inline-flex cursor-pointer'
+				onClick={menuClick}
+			>
+				<CgMenuRightAlt size={36} />
+			</span>
 
-			<ul className='fixed bottom-0 left-0 right-0 lg:hidden bg-black text-white inline-flex gap-8 justify-evenly px-6 w-screen'>
+			<motion.ul
+				variants={MobileMenu}
+				initial='rest'
+				animate={isMobileMenu ? "click" : "rest"}
+				className='-z-10 flex flex-col fixed top-24 left-0 right-0 lg:hidden bg-black text-white gap-12 justify-center py-12 items-center w-screen'
+			>
 				{navLinks.map((links, index) => {
-					const { href, Icon } = links
+					const { name, href } = links
 					return (
-						<li key={index} className='flex flex-col gap-4 w-max'>
-							<Link className='font-sans-serif text-sm p-6' href={href}>
-								<Icon size={24} />
+						<li key={index} className='w-max'>
+							<Link
+								className='font-serif text-3xl p-6'
+								href={href}
+								onClick={() => setIsMobileMenu(false)}
+							>
+								{name}
 							</Link>
 						</li>
 					)
 				})}
-			</ul>
+			</motion.ul>
 		</>
 	)
 }
