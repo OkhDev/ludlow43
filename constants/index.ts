@@ -1,27 +1,41 @@
-import { FaRunning, FaPaintBrush, FaCoffee, FaTrain } from "react-icons/fa"
-import { TbMovie } from "react-icons/tb"
-import { MdMuseum, MdPark, MdRestaurant } from "react-icons/md"
+import {
+	FaRunning,
+	FaPaintBrush,
+	FaCoffee,
+	FaTrain,
+	FaFax,
+	FaPhoneAlt,
+} from "react-icons/fa"
+import { TbMovie, TbStar } from "react-icons/tb"
+import {
+	MdMuseum,
+	MdPark,
+	MdRestaurant,
+	MdEmail,
+	MdOutlineEmail,
+} from "react-icons/md"
+import { RiPencilRuler2Line, RiBuilding2Line } from "react-icons/ri"
 
 export const navLinks = [
 	{
 		name: "Amenities",
 		href: "/amenities",
+		Icon: TbStar,
 	},
 	{
 		name: "Floor Plans",
 		href: "/floorplans",
+		Icon: RiPencilRuler2Line,
 	},
 	{
 		name: "Neighborhood",
 		href: "/neighborhood",
-	},
-	{
-		name: "Portal",
-		href: "/portal",
+		Icon: RiBuilding2Line,
 	},
 	{
 		name: "Contact",
 		href: "/contact",
+		Icon: MdOutlineEmail,
 	},
 ]
 
@@ -104,11 +118,11 @@ export const disclaimerDesc =
 	"Apartment photos and floor plans are for illustrative purposes only. Actual square footage and property or apartment features may vary."
 
 export const neighborhoodDesc =
-	"Student-oriented apartment rentals conveniently located in the heart of University City just steps from campus of Drexel, UPenn, and University of the Sciences."
+	"Student-oriented apartment rentals conveniently located in the heart of University City and just steps from the campus of Drexel, UPenn, and University of the Sciences."
 
 export const events = [
 	{
-		title: "Movie Theater",
+		title: "Movie Theatres",
 		href: "https://www.cinemark.com/theatres/pa-philadelphia/cinemark-university-city-penn-6",
 		Icon: TbMovie,
 	},
@@ -118,17 +132,17 @@ export const events = [
 		Icon: FaRunning,
 	},
 	{
-		title: "Institute of Contemporary Art",
+		title: "ICA Philadelphia",
 		href: "https://icaphila.org/",
 		Icon: FaPaintBrush,
 	},
 	{
-		title: "Penn Museum of Archaeology and Anthropology",
+		title: "Penn Museum",
 		href: "https://www.penn.museum/",
 		Icon: MdMuseum,
 	},
 	{
-		title: "Park Schuylkill Banks",
+		title: "Schuylkill Banks",
 		href: "https://www.schuylkillbanks.org/",
 		Icon: MdPark,
 	},
@@ -146,5 +160,20 @@ export const events = [
 		title: "Septa",
 		href: "https://www5.septa.org/?redirect=maps%2Ftransit%2Fmfl",
 		Icon: FaTrain,
+	},
+]
+
+export const contact = [
+	{
+		desc: "1(800)-374-5123",
+		Icon: FaPhoneAlt,
+	},
+	{
+		desc: "1(888)-823-5250 ",
+		Icon: FaFax,
+	},
+	{
+		desc: "support@ludlow43.com",
+		Icon: MdEmail,
 	},
 ]

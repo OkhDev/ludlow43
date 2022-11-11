@@ -4,7 +4,7 @@ import Link from "next/link"
 const Footer = () => {
 	const router = useRouter()
 	return (
-		<footer className='w-full bg-black py-8'>
+		<footer className='w-full bg-black py-8 mb-[4.5rem] lg:mb-0'>
 			<div className='relative flex md:flex-row flex-col justify-between items-center px-6 md:px-12 max-w-7xl w-full gap-8 m-auto text-white'>
 				<p
 					className='text-4xl font-logo text-white cursor-pointer'
