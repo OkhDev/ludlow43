@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Open+Sans:wght@400;500;600;700;800&family=Poiret+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,5 +21,31 @@
     scroll-behavior: smooth;
     color: #313639;
     background-color: #F6F6F6;
+  }
+
+  .active {
+    position: absolute;
+    left: 0;
+    bottom: -2;
+    height: 1;
+    background-color: #F6F6F6;
+  }
+
+  /* Made for Carrousel Next Image */
+  .custom-img {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+  .full-bleed {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+  .unset-img {
+    width: 100%;
+  }
+  .unset-img > div {
+    position: unset !important;
   }
 }

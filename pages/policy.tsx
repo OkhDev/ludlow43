@@ -1,12 +1,14 @@
 import Head from "next/head"
 
-export default function Home() {
+export default function Policy() {
 	return (
 		<>
 			<Head>
-				<title>Home</title>
+				<title>Privacy Policy</title>
 				<meta name='description' content='' />
 			</Head>
+
+			<div className='mt-32'>policy</div>
 		</>
 	)
 }

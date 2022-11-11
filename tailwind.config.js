@@ -10,6 +10,7 @@ module.exports = {
 			fontFamily: {
 				"sans-serif": ["Open Sans", "sans-serif"],
 				serif: ["Crimson Text", "serif"],
+				logo: ["Poiret One", "cursive"],
 			},
 			colors: {
 				black: {
