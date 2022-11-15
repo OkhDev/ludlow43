@@ -1,5 +1,5 @@
-import React, { useRef } from "react"
 import emailjs from "@emailjs/browser"
+import { useRef } from "react"
 import toast, { Toaster } from "react-hot-toast"
 
 function Form() {
@@ -40,6 +40,7 @@ function Form() {
 				<input
 					name='user_name'
 					autoFocus
+					required
 					type='text'
 					className='h-12 pl-4 rounded-md ring-0 outline-none'
 				/>
@@ -48,6 +49,7 @@ function Form() {
 				<label className='font-bold text-lg'>Email</label>
 				<input
 					name='user_email'
+					required
 					type='email'
 					className='h-12 pl-4 rounded-md ring-0 outline-none'
 				/>
@@ -64,6 +66,7 @@ function Form() {
 				<label className='font-bold text-lg'>Subject</label>
 				<input
 					name='user_subject'
+					required
 					type='text'
 					className='h-12 pl-4 rounded-md ring-0 outline-none'
 				/>
@@ -72,6 +75,7 @@ function Form() {
 				<label className='font-bold text-lg'>Message</label>
 				<textarea
 					name='user_message'
+					required
 					className='p-4 rounded-md ring-0 outline-none'
 					spellCheck={true}
 					rows={7}

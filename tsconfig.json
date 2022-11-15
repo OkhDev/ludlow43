@@ -13,14 +13,13 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
-		"incremental": true
+		"incremental": true,
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
-	"include": [
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"components/Video.jsx",
-		"pages/index.jsx"
-	],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.jsx"],
 	"exclude": ["node_modules"]
 }

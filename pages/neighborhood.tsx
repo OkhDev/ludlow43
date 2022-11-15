@@ -2,15 +2,19 @@ import dynamic from "next/dynamic"
 import Head from "next/head"
 import Image from "next/image"
 import { neighborhoodDesc } from "../constants"
+import BusRoutes from "../components/Neighborhood/BusRoutes"
 
-const DynamicEvents = dynamic(() => import("../components/EventLinks"))
-const DynamicBus = dynamic(() => import("../components/BusRoutes"))
+const DynamicEvents = dynamic(
+	() => import("../components/Neighborhood/EventLinks"),
+	{ ssr: true }
+)
 
 export default function Neighborhood() {
 	return (
 		<>
 			<Head>
 				<title>Neighborhood</title>
+				<meta content='width=device-width, initial-scale=1' name='viewport' />
 				<meta
 					name='description'
 					content='The neighborhood around ludlow 43 has a ton of things to do.You will have access to movie theatres, an athletic field, coffee shops, and more.'
@@ -38,7 +42,7 @@ export default function Neighborhood() {
 
 					<DynamicEvents />
 
-					<DynamicBus />
+					<BusRoutes />
 				</div>
 			</div>
 		</>

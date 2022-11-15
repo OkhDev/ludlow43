@@ -1,15 +1,17 @@
 import dynamic from "next/dynamic"
 import Head from "next/head"
-import Image from "next/image"
+import ManagementOffice from "../components/Contact/ManagementOffice"
 
-const DynamicForm = dynamic(() => import("../components/Form"), { ssr: false })
-const DynamicManage = dynamic(() => import("../components/ManagementOffice"))
+const DynamicForm = dynamic(() => import("../components/Contact/Form"), {
+	ssr: true,
+})
 
 export default function GetInTouch() {
 	return (
 		<>
 			<Head>
 				<title>Contact</title>
+				<meta content='width=device-width, initial-scale=1' name='viewport' />
 				<meta
 					name='description'
 					content='Contact support for ludlow 43 which includes a contact form along with the email, phone number, fax number, and building location.'
@@ -25,15 +27,13 @@ export default function GetInTouch() {
 						<DynamicForm />
 					</div>
 					<div className='relative unset-img full-bleed flex-grow-0 flex-shrink-0 basis-1/2 w-full h-full'>
-						<Image
+						<img
 							src='/images/contact.webp'
 							alt='image of ludlow43'
 							sizes='(max-width: 100vw) 100vw'
 							className='custom-img rounded-md drop-shadow-sm select-none w-full'
-							fill
-							priority
 						/>
-						<DynamicManage />
+						<ManagementOffice />
 					</div>
 				</div>
 			</div>

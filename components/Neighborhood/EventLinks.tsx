@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { events } from "../constants"
+import { events } from "../../constants"
 
 function EventLinks() {
 	return (

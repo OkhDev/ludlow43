@@ -5,6 +5,7 @@ export default function Policy() {
 		<>
 			<Head>
 				<title>Privacy Policy</title>
+				<meta content='width=device-width, initial-scale=1' name='viewport' />
 				<meta
 					name='description'
 					content='The policy agreement and contract details of ludlow 43 detailing the ins and outs of the management handling.'

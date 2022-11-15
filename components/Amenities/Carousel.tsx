@@ -1,14 +1,14 @@
-import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
+import useEmblaCarousel from "embla-carousel-react"
+import { domAnimation, LazyMotion, motion } from "framer-motion"
 import Image from "next/image"
 import { useCallback } from "react"
 import {
 	IoIosArrowDropleftCircle,
 	IoIosArrowDroprightCircle,
 } from "react-icons/io"
-import { motion } from "framer-motion"
 
-export const Carousel = () => {
+function Carousel() {
 	const images = [1, 2, 3, 4]
 
 	const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -29,7 +29,7 @@ export const Carousel = () => {
 	}, [emblaApi])
 
 	return (
-		<div className='relative overflow-hidden' ref={emblaRef}>
+		<section className='mt-24 mx-auto relative overflow-hidden' ref={emblaRef}>
 			<div className='flex'>
 				{images.map((num, i) => (
 					<div
@@ -47,24 +47,28 @@ export const Carousel = () => {
 					</div>
 				))}
 			</div>
-			<motion.div
-				whileTap={{ scale: 0.9 }}
-				className='absolute w-16 h-full top-0 left-0 text-white cursor-pointer'
-				onClick={scrollPrev}
-			>
-				<span className='z-20 flex h-full justify-center items-center m-auto'>
-					<IoIosArrowDropleftCircle size={40} />
-				</span>
-			</motion.div>
-			<motion.div
-				whileTap={{ scale: 0.9 }}
-				className='absolute w-16 h-full top-0 right-0 text-white cursor-pointer'
-				onClick={scrollNext}
-			>
-				<span className='z-20 flex h-full justify-center items-center m-auto'>
-					<IoIosArrowDroprightCircle size={40} />
-				</span>
-			</motion.div>
-		</div>
+			<LazyMotion features={domAnimation}>
+				<motion.div
+					whileTap={{ scale: 0.9 }}
+					className='absolute w-16 h-full top-0 left-0 text-white cursor-pointer'
+					onClick={scrollPrev}
+				>
+					<span className='z-20 flex h-full justify-center items-center m-auto'>
+						<IoIosArrowDropleftCircle size={40} />
+					</span>
+				</motion.div>
+				<motion.div
+					whileTap={{ scale: 0.9 }}
+					className='absolute w-16 h-full top-0 right-0 text-white cursor-pointer'
+					onClick={scrollNext}
+				>
+					<span className='z-20 flex h-full justify-center items-center m-auto'>
+						<IoIosArrowDroprightCircle size={40} />
+					</span>
+				</motion.div>
+			</LazyMotion>
+		</section>
 	)
 }
+
+export default Carousel

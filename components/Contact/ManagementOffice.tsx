@@ -1,7 +1,6 @@
-import React from "react"
-import { contact } from "../constants/index"
-import { MdEmail } from "react-icons/md"
 import { HiLocationMarker } from "react-icons/hi"
+import { MdEmail } from "react-icons/md"
+import { contact } from "../../constants/index"
 
 function ManagementOffice() {
 	return (

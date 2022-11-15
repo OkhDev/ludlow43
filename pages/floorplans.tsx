@@ -1,13 +1,19 @@
+import dynamic from "next/dynamic"
 import Head from "next/head"
-import { disclaimerDesc } from "../constants"
-import Bedrooms from "../components/FloorPlans/Bedrooms"
 import { IoInformationCircleOutline } from "react-icons/io5"
+import { disclaimerDesc } from "../constants"
+
+const DynamicBedrooms = dynamic(
+	() => import("../components/FloorPlans/Bedrooms"),
+	{ ssr: true }
+)
 
 export default function FloorPlans() {
 	return (
 		<>
 			<Head>
 				<title>Floor Plans</title>
+				<meta content='width=device-width, initial-scale=1' name='viewport' />
 				<meta
 					name='description'
 					content='Ludlow 43 different floorplans that are available for lease ranging from a studio apartment with a full bathroom to a 4 bedroom and 2 bathroom with a living room apartment.'
@@ -28,7 +34,7 @@ export default function FloorPlans() {
 						</p>
 					</div>
 				</div>
-				<Bedrooms />
+				<DynamicBedrooms />
 			</div>
 		</>
 	)

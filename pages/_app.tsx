@@ -1,20 +1,22 @@
-import type { AppProps } from "next/app"
-// import Footer from "../components/Footer"
-import Navbar from "../components/Navbar/Navbar"
-import "../styles/globals.css"
-import "@fontsource/poiret-one/400.css"
+import "@fontsource/crimson-text/400.css"
 import "@fontsource/open-sans/400.css"
 import "@fontsource/open-sans/700.css"
-import "@fontsource/open-sans/700.css"
-import "@fontsource/crimson-text/400.css"
+import "@fontsource/poiret-one/400.css"
+import type { AppProps } from "next/app"
 import dynamic from "next/dynamic"
+import "../styles/globals.css"
 
-const DynamicFooter = dynamic(() => import("../components/Footer"))
+const DynamicNavBar = dynamic(() => import("../components/Navbar/Navbar"), {
+	ssr: true,
+})
+const DynamicFooter = dynamic(() => import("../components/Footer"), {
+	ssr: true,
+})
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
-			<Navbar />
+			<DynamicNavBar />
 			<Component {...pageProps} />
 			<DynamicFooter />
 		</>
